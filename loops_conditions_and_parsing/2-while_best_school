@@ -4,4 +4,5 @@ count=0
 while (count < 10)
 do
 	echo "Best School"
+	count +=1
 done
