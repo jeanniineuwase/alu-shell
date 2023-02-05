@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-for _ in range(10):
-	print("Best School")
