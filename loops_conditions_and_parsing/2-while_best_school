@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-#print the words in a list with while statment
-while:
+#print the words in a list with while statatment
+word=0
+while word < 10 :
 do
 	echo "Best School"
 done
