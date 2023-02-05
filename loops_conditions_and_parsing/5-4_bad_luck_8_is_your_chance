@@ -3,12 +3,12 @@
 count=1
 while [ $count -le 10 ]
 do
-  if [ $count -eq 4 ]; do
+  if [ $count -eq 4 ]; then
     echo "Bad Luck"
-  elif [ $count -eq 8 ]; do
+  elif [ $count -eq 8 ]; then
     echo "Good Luck"
   else
     echo "Best School"
-do
+  fi
   count=$((count + 1))
 done
