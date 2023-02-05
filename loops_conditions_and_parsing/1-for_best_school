@@ -2,4 +2,4 @@
 #print the words in a list
 for i in {1..10}
 do
-	echo("Best School")
+	echo "Best School"
