@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #!/usr/bin/env bash
 #Write a Bash script that displays the time for 12 hours and 59 minutes:
 hours=0
@@ -10,3 +11,19 @@ do
     ((minutes++))
   done
 done | head -70
+=======
+#!/usr/bin/env bash                                                                      
+#Write a Bash script that displays the time for 12 hours and 59 minutes:                 
+hours=0                                                                                  
+minutes=0                                                                                
+while [ $hours -le 12 ]                                                                  
+do                                                                                       
+  while [ $minutes -le 59 ]                                                              
+  do                                                                                     
+    echo "$hours:$minutes"                                                               
+    ((minutes++))                                                                        
+  done                                                                                   
+  minutes=0                                                                              
+  ((hours++))                                                                            
+done | head -70   
+>>>>>>> 62ebb3690de11f090d77e599da6e260b0c480fbc
