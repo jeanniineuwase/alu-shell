@@ -9,6 +9,4 @@ do
     echo "$hours:$minutes"
     ((minutes++))
   done
-  minutes=0
-  ((hours++))
 done | head -70
