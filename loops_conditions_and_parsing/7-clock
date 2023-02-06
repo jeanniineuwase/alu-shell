@@ -2,9 +2,9 @@
 # Initialize the hours and minutes variables
 hour=0
 minute=1
-echo "Hour: 0"$hour
+echo "Hour"$hour
 while hour <= 12
-	echo $hour
+	echo hour
 	hour=hour +1
 	echo "hour" $minute
 while minutes <= 59
