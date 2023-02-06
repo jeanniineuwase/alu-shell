@@ -2,9 +2,6 @@
 # Initialize the hours and minutes variables                                                                 
 hour=0                                                                                                       
 minute=1
-<<<<<<< HEAD
-whie
-=======
 while [ $hours -lt 12 ]
 do
   while [ $minutes -lt 59 ]
@@ -15,4 +12,3 @@ do
   hours=$((hours + 1))
   minutes=0
 done | head -70
->>>>>>> 7e9fffc1eb8f394bc78e2e4dc2794bd1a252c6a8
