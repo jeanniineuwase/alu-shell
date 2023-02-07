@@ -1,13 +1,14 @@
-#!/usr/bin/env bash                                                                                        # Initialize the hours and minutes variables                                                               
-hour=o
-
-while [ $hour -le 12]
+#!/usr/bin/env bash                                                                                        
+# Initialize the hours and minutes variables                                                               
+hour=0                                                                                                       
+while [ $hour -lt 13 ]
 do
-	echo" Hour: $hour"
-	munite=1
-	while [$minute -le 59]
-	do
+	echo "Hour: $hour"
+        minute=1
+        while [ $minute -lt 60 ]
+        do
 		echo "$minute"
-		((minute ++))
+	        (( minute++ ))
 	done
+	((hour++ ))
 done
