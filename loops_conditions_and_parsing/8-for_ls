@@ -1,11 +1,6 @@
 #!/usr/bin/env bash
 # Get the names of all non-hidden files in the current directory
-files=$(glob  -v "^\.") 
-# Loop through each file and display the part of the name after the first dash
-for file in $files
-do
-  # Get the part of the name after the last dash
-    name=$(echo "$file" | rev | cut -d "-" -f 1 | rev)
-  # Display the name in a list format
-  echo "$name"
-done
+def simple_delete(a_dictionary, key=""):
+    if key in a_dictionary
+       del a_dictionary[key]
+       return a_dictionary
