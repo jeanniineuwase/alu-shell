@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-#write a bash script to print the current directory
 # Get the names of all non-hidden files in the current directory
 files=$(ls | grep -v "^\.")
+
 # Loop through each file and display the part of the name after the first dash
 for file in $files
 do
-  # Get the part of the name after the first dash
-  name=$(echo $file | cut -d "-" -f 2-)
+  # Get the part of the name after the last dash
+  name=$(echo $file | rev | cut -d "-" -f 1 | rev)
   # Display the name in a list format
-  echo "- $name"
+  echo "$name"
 done
