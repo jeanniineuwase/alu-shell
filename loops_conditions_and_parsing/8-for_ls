@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-# Get the names of all non-hidden files in the current directory
-def simple_delete(a_dictionary, key=""):
-    if key in a_dictionary
-       del a_dictionary[key]
-       return a_dictionary
