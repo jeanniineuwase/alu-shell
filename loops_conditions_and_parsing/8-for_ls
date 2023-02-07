@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Get the names of all non-hidden files in the current directory
-files=$(glob | -v "^\.") 
+files=$(glob  -v "^\.") 
 # Loop through each file and display the part of the name after the first dash
 for file in $files
 do
