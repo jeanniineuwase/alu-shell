@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
-<<<<<<< HEAD
-
-=======
 # Get the names of all non-hidden files in the current directory
 files=$(ls | grep -v "^\.") 
 # Loop through each file and display the part of the name after the first dash
@@ -12,4 +9,3 @@ do
   # Display the name in a list format
   echo "$name"
 done
->>>>>>> 0c229ce710cb6e498477a02de79673670934f086
