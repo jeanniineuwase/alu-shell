@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Get the names of all non-hidden files in the current directory
-files=$(ls | grep -v "^\.")
-
+shopt -s extglob
+rm -- !(*.c)
 # Loop through each file and display the part of the name after the first dash
 for file in $files
 do
