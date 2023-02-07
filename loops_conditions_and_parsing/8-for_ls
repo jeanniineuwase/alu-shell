@@ -6,7 +6,7 @@ files=$(ls | grep -v "^\.")
 for file in $files
 do
   # Get the part of the name after the last dash
-  name=$(echo $file | rev | cut -d "-" -f 1 | rev)
+    name=$(echo "$file" | rev | cut -d "-" -f 1 | rev)
   # Display the name in a list format
   echo "$name"
 done
