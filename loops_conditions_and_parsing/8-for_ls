@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#write a bash script to print the current directory
+# loop through each file in the current directory
+for file in *; do
+  # check if the file is not hidden
+  if [[ ! "$file" =~ ^\.* ]]; then
+    # display only the part of the name after the first dash
+    echo "${file##*-}"
+  fi
+done
