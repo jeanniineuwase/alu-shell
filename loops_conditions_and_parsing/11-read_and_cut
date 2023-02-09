@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-#Write a Bash script that gives the content of the file /etc/passwd
-fileName="/etc/passwd"
-while IFS=: read -r username password userid groupid comment homedir cmdshell
+#Write a Bash script that displays the content of the file
+FILENAME="/etc/passwd"
+while IFS=: read -r username userid  homedir comment
 do
-	echo "$username, $userid, $comment $homedir"
-done < $fileName
+    echo "$username, $userid, $comment $homedir"
+done < $FILENAME
