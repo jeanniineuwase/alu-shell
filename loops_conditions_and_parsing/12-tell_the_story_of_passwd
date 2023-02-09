@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
-#Tell the story of passwd
-
+#talk the story about the program
+FILENAME="/etc/passwd"
+while IFS=: read -r username password userid groupid comment homedir cmdshell
+do
+	    echo "the user $username is part of the $userid gang, lives in $homedir" and rides $cmdshell. $user ID's place is protected by the passcode $password , more info about the user here: $user ID HERE
+done < $FILENAME
