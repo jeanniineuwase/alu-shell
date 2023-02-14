@@ -1,37 +1,46 @@
 #!/usr/bin/env bash
 #Programs that are detached from the terminal and running in the background are called daemons or processes
-#!/usr/bin/env bash
-#Programs that are detached from the terminal and running in the background are called daemons or processs
-case $1 in
-  start)
+function start_process() {
+    # Start manage_my_process indefinitely
+    while true
+    do
+        echo "I am alive!" >> /tmp/my_process
+        sleep 2
+    done
+}
+
+function stop_process() {
+    # Stop manage_my_process and remove PID file
     if [ -f /var/run/my_process.pid ]; then
-      echo "manage_my_process already running with PID $(cat /var/run/my_process.pid)"
-      exit 1
+        kill $(cat /var/run/my_process.pid)
+        rm /var/run/my_process.pid
     fi
-    /path/to/manage_my_process &
-    echo $! > /var/run/my_process.pid
-    echo "manage_my_process started"
-    ;;
-  stop)
-    if [ ! -f /var/run/my_process.pid ]; then
-      echo "manage_my_process is not running"
-      exit 1
-    fi
-    kill "$(cat /var/run/my_process.pid)"
-    rm /var/run/my_process.pid
-    echo "manage_my_process stopped"
-    ;;
-  restart)
-    if [ -f /var/run/my_process.pid ]; then
-      kill "$(cat /var/run/my_process.pid)"
-      rm /var/run/my_process.pid
-    fi
-    /path/to/manage_my_process &
-    echo $! > /var/run/my_process.pid
-    echo "manage_my_process restarted"
-    ;;
-  *)
-    echo "Usage: manage_my_process {start|stop|restart}"
-    exit 1
-    ;;
+}
+
+case "$1" in
+    start)
+        # Start manage_my_process and save PID to file
+        start_process &
+        echo $! > /var/run/my_process.pid
+        echo "manage_my_process started"
+        ;;
+    stop)
+        # Stop manage_my_process and remove PID file
+        stop_process
+        echo "manage_my_process stopped"
+        ;;
+    restart)
+        # Stop manage_my_process, remove PID file, and start it again
+        stop_process
+        start_process &
+        echo $! > /var/run/my_process.pid
+        echo "manage_my_process restarted"
+        ;;
+    *)
+        # Display usage instructions
+        echo "Usage: $0 {start|stop|restart}"
+        exit 1
+        ;;
 esac
+
+exit 0
