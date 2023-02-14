@@ -17,13 +17,13 @@ case $1 in
       echo "manage_my_process is not running"
       exit 1
     fi
-    kill $(cat /var/run/my_process.pid)
+    kill "$(cat /var/run/my_process.pid)"
     rm /var/run/my_process.pid
     echo "manage_my_process stopped"
     ;;
   restart)
     if [ -f /var/run/my_process.pid ]; then
-      kill $(cat /var/run/my_process.pid)
+      kill "$(cat /var/run/my_process.pid)"
       rm /var/run/my_process.pid
     fi
     /path/to/manage_my_process &
