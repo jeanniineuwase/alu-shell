@@ -12,7 +12,7 @@ function start_process() {
 function stop_process() {
     # Stop manage_my_process and remove PID file
     if [ -f /var/run/my_process.pid ]; then
-        kill $(cat /var/run/my_process.pid)
+        kill "$(cat /var/run/my_process.pid)"
         rm /var/run/my_process.pid
     fi
 }
